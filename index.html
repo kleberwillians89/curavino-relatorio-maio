@@ -6,28 +6,57 @@
 <meta name='viewport' content='width=device-width, initial-scale=1'>
 <title>Relatório Premium Curavino</title>
 <style>
-body { font-family: Arial, sans-serif; margin: 0; background: #f7f3ed; color: #2b2118; }
-.container { max-width: 1120px; margin: 0 auto; padding: 32px; }
+* { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; text-size-adjust: 100%; }
+body { font-family: Arial, sans-serif; margin: 0; background: #f7f3ed; color: #2b2118; overflow-x: hidden; }
+.container { width: min(100%, 1120px); margin: 0 auto; padding: 32px; }
 .hero { background: linear-gradient(135deg, #3a0d19 0%, #7a0019 55%, #c9a227 100%); color: white; border-radius: 24px; padding: 48px; box-shadow: 0 20px 50px rgba(58,13,25,0.25); }
-.hero h1 { margin: 0 0 12px 0; font-size: 42px; }
-.hero p { font-size: 20px; line-height: 1.6; max-width: 800px; }
-.section { margin-top: 28px; background: white; border-radius: 20px; padding: 28px; box-shadow: 0 10px 30px rgba(0,0,0,0.06); }
-.section h2 { margin-top: 0; color: #7a0019; font-size: 28px; }
-.grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 18px; margin-top: 20px; }
-.card { background: linear-gradient(180deg, #fffaf2, #f5ede3); border: 1px solid #eadfcd; border-radius: 18px; padding: 20px; }
-.card .label { font-size: 13px; text-transform: uppercase; color: #8b6f47; letter-spacing: 1px; }
-.card .value { font-size: 34px; font-weight: 700; color: #7a0019; margin-top: 8px; }
-.card .sub { font-size: 15px; color: #5a4a3f; margin-top: 6px; }
+.hero h1 { margin: 0 0 12px 0; font-size: 42px; line-height: 1.12; overflow-wrap: anywhere; }
+.hero p { font-size: 20px; line-height: 1.6; max-width: 800px; margin-bottom: 0; }
+.section { margin-top: 28px; background: white; border-radius: 20px; padding: 28px; box-shadow: 0 10px 30px rgba(0,0,0,0.06); overflow: hidden; }
+.section h2 { margin-top: 0; color: #7a0019; font-size: 28px; line-height: 1.2; }
+.section p { line-height: 1.65; }
+.grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 18px; margin-top: 20px; }
+.card { min-width: 0; background: linear-gradient(180deg, #fffaf2, #f5ede3); border: 1px solid #eadfcd; border-radius: 18px; padding: 20px; }
+.card .label { font-size: 13px; text-transform: uppercase; color: #8b6f47; letter-spacing: 1px; overflow-wrap: anywhere; }
+.card .value { font-size: 34px; line-height: 1.08; font-weight: 700; color: #7a0019; margin-top: 8px; overflow-wrap: anywhere; }
+.card .sub { font-size: 15px; line-height: 1.4; color: #5a4a3f; margin-top: 6px; }
 .highlight { background: linear-gradient(135deg, #7a0019, #4d0b1a); color: white; border-radius: 18px; padding: 24px; line-height: 1.7; font-size: 18px; }
-.two-col { display: grid; grid-template-columns: 1.1fr 0.9fr; gap: 24px; align-items: start; }
-img.chart { width: 100%; border-radius: 16px; border: 1px solid #eadfcd; background: white; }
+.two-col { display: grid; grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.9fr); gap: 24px; align-items: start; }
+img.chart { display: block; width: 100%; max-width: 100%; height: auto; border-radius: 16px; border: 1px solid #eadfcd; background: white; }
 .table { width: 100%; border-collapse: collapse; margin-top: 16px; font-size: 15px; }
-.table th, .table td { padding: 12px 10px; border-bottom: 1px solid #eee2d4; text-align: left; }
+.table th, .table td { padding: 12px 10px; border-bottom: 1px solid #eee2d4; text-align: left; vertical-align: top; }
 .table th { color: #7a0019; background: #fbf6ef; }
 .quote { font-size: 26px; line-height: 1.4; font-weight: 700; color: #7a0019; }
 .footer-note { margin-top: 10px; color: #6d5a4c; font-size: 14px; }
-.badge { display: inline-block; background: #f3e1a6; color: #5f4600; border-radius: 999px; padding: 8px 14px; font-weight: 700; margin-bottom: 14px; }
-@media (max-width: 900px) { .grid { grid-template-columns: repeat(2, 1fr); } .two-col { grid-template-columns: 1fr; } .hero h1 { font-size: 32px; } }
+.badge { display: inline-block; max-width: 100%; background: #f3e1a6; color: #5f4600; border-radius: 999px; padding: 8px 14px; font-weight: 700; margin-bottom: 14px; line-height: 1.25; }
+@media (max-width: 900px) {
+  .container { padding: 24px; }
+  .grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .two-col { grid-template-columns: 1fr; }
+  .hero { padding: 36px; }
+  .hero h1 { font-size: 32px; }
+}
+@media (max-width: 600px) {
+  .container { padding: 14px; }
+  .hero { border-radius: 18px; padding: 24px 18px; }
+  .hero h1 { font-size: 28px; }
+  .hero p { font-size: 16px; line-height: 1.55; }
+  .section { margin-top: 18px; border-radius: 16px; padding: 18px; }
+  .section h2 { font-size: 23px; }
+  .grid { grid-template-columns: 1fr; gap: 12px; }
+  .card { border-radius: 14px; padding: 16px; }
+  .card .value { font-size: 30px; }
+  .highlight { border-radius: 14px; padding: 18px; font-size: 16px; line-height: 1.6; }
+  .quote { font-size: 21px; }
+  .table { display: block; overflow-x: auto; -webkit-overflow-scrolling: touch; font-size: 14px; }
+  .table th, .table td { min-width: 96px; padding: 10px 8px; }
+  .table th:first-child, .table td:first-child { min-width: 220px; }
+}
+@media (max-width: 380px) {
+  .hero h1 { font-size: 25px; }
+  .card .value { font-size: 27px; }
+}
 </style>
 </head>
 <body>
