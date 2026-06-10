@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang='pt-BR'>
 <head>
@@ -157,6 +156,33 @@ img.chart { display: block; width: 100%; max-width: 100%; height: auto; border-r
       <div class='highlight'>
         Com um investimento mínimo, a operação praticamente dobrou em receita, pedidos e clientes.
       </div>
+    </div>
+  </div>
+
+  <div class='section'>
+    <div class='badge'>Google/FBits</div>
+    <h2>Origem das vendas</h2>
+    <div class='highlight'>
+      Cruzamento entre FBits e GA4: a FBits mostra a receita oficial de maio, enquanto o GA4 identifica a origem dos pedidos com transaction_id encontrado no período analisado. Nesta leitura, o Google concentra a maior parte da receita atribuída.
+    </div>
+    <div class='grid'>
+      <div class='card'><div class='label'>Receita Site</div><div class='value'>R$ 27.957,67</div><div class='sub'>Receita oficial FBits em maio</div></div>
+      <div class='card'><div class='label'>Receita Google</div><div class='value'>R$ 11.562,27</div><div class='sub'>Google Ads + Google Orgânico identificados no GA4</div></div>
+      <div class='card'><div class='label'>Receita Direta</div><div class='value'>R$ 313,35</div><div class='sub'>Direto / Site identificado no GA4</div></div>
+      <div class='card'><div class='label'>Participação Google</div><div class='value'>41,4%</div><div class='sub'>Receita Google sobre Receita Site</div></div>
+    </div>
+    <div class='chart-card'>
+      <h2>Origem das vendas</h2>
+      <p>FBits mostra a receita oficial da loja. GA4 ajuda a entender de onde vieram as vendas atribuídas por canal. A leitura abaixo considera pedidos do GA4 cruzados com o PDF da FBits e desconsidera pedidos cancelados.</p>
+      <table class='table'>
+        <tr><th>Origem</th><th>Receita</th><th>Pedidos</th><th>Participação sobre site</th></tr>
+        <tr><td>Google Orgânico</td><td>R$ 7.981,05</td><td>15</td><td>28,5%</td></tr>
+        <tr><td>Google Ads</td><td>R$ 3.581,22</td><td>6</td><td>12,8%</td></tr>
+        <tr><td>Radar do Jovem / Outros</td><td>R$ 727,06</td><td>3</td><td>2,6%</td></tr>
+        <tr><td>Direto / Site</td><td>R$ 313,35</td><td>1</td><td>1,1%</td></tr>
+        <tr><td>ChatGPT</td><td>R$ 0,00</td><td>0</td><td>0,0%</td></tr>
+      </table>
+      <p class='footer-note'>Total identificado pelo cruzamento GA4 + FBits: R$ 12.602,68, equivalente a 45,1% da receita oficial de maio. O restante da receita permanece sem origem atribuída neste cruzamento por diferença de período, transações sem origem clara ou pedidos ausentes na exportação do GA4.</p>
     </div>
   </div>
 
